@@ -3,15 +3,9 @@ pipeline {
 
     stages {
 
-        stage('Build') {
+        stage('Build and Test') {
             steps {
                 sh './gradlew clean build'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh './gradlew test'
             }
         }
     }
