@@ -21,5 +21,11 @@ pipeline {
                 sh 'docker push karthikeyanml/calculator-app:${BUILD_NUMBER}'
             }
         }
+
+        stage('Deploy to Kubernetes') {
+            steps {
+                sh 'kubectl apply -f k8s/'
+            }
+        }
     }
 }
